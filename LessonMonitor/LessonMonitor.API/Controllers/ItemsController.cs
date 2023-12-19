@@ -13,22 +13,22 @@ namespace LessonMonitor.API.Controllers
         }
 
         [HttpGet]
-            public Item[] Get(string itemName)
-            {
-                var random = new Random();
-                var items = new List<Item>();
+        public Item[] Get(string itemName)
+        {
+            var random = new Random();
+            var items = new List<Item>();
 
-                for (int i = 0; i < 10; i++)
-                {
+            for (int i = 0; i < 10; i++)
+            {
                 var item = new Item();
 
                 item.Name = itemName + i;
                 item.Id = random.Next(100, 1000);
-                
+
                 items.Add(item);
-                }
-                return items.ToArray();
             }
+            return items.ToArray();
+        }
         }
     }
 
